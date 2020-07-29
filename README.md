@@ -1,5 +1,5 @@
 # Open Fest 2020 Registration Form
-This is a web-app created using Python, Django. Includes a registration form. To be used with the OpenFest 2020 communication campaign.	This is a Web-Form created in ordert to allow Algerian students to register for the second edition of Open Fest ([Hacktoberfest](https://hacktoberfest.digitalocean.com/) | by [OpenMindsClub](https://openmindsclub.net/))
+This is a Web-Form created in ordert to allow Algerian students to register for the second edition of Open Fest ([Hacktoberfest](https://hacktoberfest.digitalocean.com/) | by [OpenMindsClub](https://openmindsclub.net/))
 
 ## Table of Content
 * [Technologies](#Technologies)
