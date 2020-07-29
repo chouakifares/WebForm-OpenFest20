@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{% block title %} OpenFest &mdash; Hacktoberfest 2020 {% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="{% static 'pages/images/favicon.ico' %}">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'pages/fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/fonts/flaticon/font/flaticon.css' %}">
+  <!-- STYLES -->
+  <link rel="stylesheet" href="{% static 'pages/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/button.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/popup.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+</head>
+
+<body>
+
+  {% block register %}
+  {% endblock %}
+  <div class="site-wrap">
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3" style="font-family: 'Inter', sans-serif;" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0"><a class="text-white h2 mb-0">Open<span class="text-primary">Fest</span>
+              </a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#organizer">Organizer</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+                <li><a href=""></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#"
+              class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+        </div>
+      </div>
+  </div>
+  </header>
+
+    <button onclick="topFunction()" id="button" title="Go to top">
+      &nbsp;<span class="icon"><i class="fa fa-angle-double-up has-text-white"></i></span>&nbsp;
+    </button>
+
+    {% block content %}
+    {% endblock %}
+
+
+  <footer class="site-footer" style="font-family: 'Inter', sans-serif;">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <h2 class="footer-heading text-uppercase mb-4">About Us</h2>
+          <p>OpenMindsClub is a USTHB scientific club founded in 2009.</p>
+          <p>USTHB,‌ ‌1‌er‌‌ ‌étage‌ ‌du‌ ‌CRI<br>
+            BP‌ ‌32‌ ‌El‌ ‌Alia‌ ‌16111,‌ ‌Bab‌ ‌Ezzouar,‌ Alger </p>
+
+        </div>
+        <div class="col-md-4">
+          <h2 class="footer-heading text-uppercase mb-4">Contact Us</h2>
+          <p>openmindsclub@usthb.dz‌ <br>
+            contact@openmindsclub.net‌ <br>
+            <a href="https://www.openmindsclub.net">openmindsclub.net‌</a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h2 class="footer-heading text-uppercase mb-4">Connect with Us</h2>
+          <p>
+            <a href="facebook.com/openmindsclub" target="_blank" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+            <a href="https://www.instagram.com/openmindsclub/" target="_blank" class="p-2"><span class="icon-instagram"></span></a>
+            <a href="https://twitter.com/clubopenminds" target="_blank" class="p-2"><span class="icon-twitter"></span></a>
+            <a href="https://www.linkedin.com/company/open-minds-club/" target="_blank" class="p-2"><span
+                class="icon-linkedin"></span></a>
+          </p>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-md-12 text-center">
+          <div class="border-top pt-5">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Made with <i class="icon-heart text-primary" aria-hidden="true"></i> by Humans of OMC</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="{% static 'pages/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'pages/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'pages/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'pages/js/popper.min.js' %}"></script>
+  <script src="{% static 'pages/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'pages/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'pages/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'pages/js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'pages/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'pages/js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'pages/js/aos.js' %}"></script>
+  <script src="{% static 'pages/js/button.js' %}"></script>
+  <script src="{% static 'pages/js/popup.js' %}"></script>
+  <script src="{% static 'pages/js/main.js' %}"></script>
+
+</body>
+
+</html>

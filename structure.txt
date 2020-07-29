@@ -1,0 +1,40 @@
+● src
+|
++---● pages (app folder)
+|   |
+|   +--● static
+|   |  |--● pages
+|   |  |  |--● css
+|   |  |  |--● fonts
+|   |  |  |--● images
+|   |  |  |--● js
+|   |  |  |--● scss
+|   |
+|   +--● templates
+|   |  |--● pages
+|   |  |  |--● errors
+|   |  |  |--● index
+|   |  |  |  |-- base.html
+|   |  |  |  |-- index.html
+|   |
+|   |-- urls.py
+|   |-- views.py
+|
++---● participant (app folder)
+|   |
+|   +--● migrations (includes files related to migrations)
+|   |
+|   +--● templates
+|   |  |--● participant
+|   |  |  |--register.html
+|   |  |
+|   |
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
+|
++---● registeration (project folder)
+|   |
+|   |--settings.py     (for the configuration of the project)
+|   |--urls.py         (for the routing)

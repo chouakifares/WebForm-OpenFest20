@@ -1,0 +1,297 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>OpenFest &mdash; Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="{% static 'pages/images/favicon.ico' %}">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'pages/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/fonts/flaticon/font/flaticon.css' %}">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="{% static 'pages/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/button.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/popup.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+</head>
+
+<body>
+    <div class="site-wrap">
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="site-navbar py-3" style="font-family: 'Inter', sans-serif;" role="banner">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-11 col-xl-2">
+                        <h1 class="mb-0"><a class="text-white h2 mb-0">Open<span class="text-primary">Fest</span>
+                            </a></h1>
+                    </div>
+                    <div class="col-12 col-md-10 d-none d-xl-block">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                                <li class="active"><a href="/home/">Home</a></li>
+                                <li><a href="/home/#about">About</a></li>
+                                <li><a href="/home/#organizer">Organizer</a></li>
+                                <li><a href="/home/#prizes">Prizes</a></li>
+                                <li><a href="/home/#schedule">Schedule</a></li>
+                                <li><a href="/home/#get-involved">Get Involved</a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
+                            href="#" class="site-menu-toggle js-menu-toggle text-white"><span
+                                class="icon-menu h3"></span></a></div>
+                </div>
+            </div>
+    </div>
+    </header>
+
+    <button onclick="topFunction()" id="button" title="Go to top">
+        &nbsp;<span class="icon"><i class="fa fa-angle-double-up has-text-white"></i></span>&nbsp;
+    </button>
+
+    <div class="site-section site-hero inner" id="register">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-10">
+                    <span class="d-block mb-3 caption" data-aos="fade-up">Save The Date</span>
+                    <h1 class="d-block mb-4" data-aos="fade-up" data-aos-delay="100">Register Now</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section" style="font-family: 'Inter', sans-serif;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <div class="alert alert-{%if message.tags == 'error'%}danger{%else%}{{message.tags}}{%endif%}"
+                            role="alert">
+                            {{message}}
+                        </div>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    <h1 class="display-4">Are You Ready To Fest?</h1>
+                    <hr class="my-4">
+                    <form action="" method="POST" autocomplete="off">
+                        <!-- Create a unique csref token while rendering this form-->
+                        {%csrf_token%}
+
+                        <!-- First and Last Name -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{form.first_name| as_crispy_field}}
+                            </div>
+                            <div class="col-md-6">
+                                {{form.last_name| as_crispy_field}}
+                            </div>
+                        </div>
+
+                        <!-- Email and Phone Number -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{form.email| as_crispy_field}}
+                            </div>
+                            <div class="col-md-6">
+                                {{form.phone_number| as_crispy_field}}
+                            </div>
+                        </div>
+
+                        <!-- University, Branch and Level -->
+                        {{form.university| as_crispy_field}}
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{form.branch| as_crispy_field}}
+                            </div>
+                            <div class="col-md-6">
+                                {{form.level| as_crispy_field}}
+                            </div>
+                        </div>
+
+                        <!-- Radiobuttons -->
+                        <br><br>
+                        {{form.do_git | as_crispy_field}}
+                        {{form.do_fest | as_crispy_field}}
+                        {{form.experience | as_crispy_field}}
+                        {{form.availability | as_crispy_field}}
+                        <br>
+                        <!-- Radiobuttons -->
+
+                        <!-- Checkbox -->
+                        {{form.conduct | as_crispy_field}}
+                        <br>
+                        <!-- Checkbox -->
+
+                        <!-- Submit changes -->
+                        <div class="row" data-aos="fade-up" data-aos-delay="500">
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>I
+                                        Am Ready!</span></button>
+                            </div>
+                        </div>
+                        <!-- Submit changes -->
+                    </form>
+                </div>
+
+                <div class="col-md-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 mb-3">
+                        <p class="mb-0 font-weight-bold text-secondary text-uppercase mb-3">For More Info</p>
+                        <p class="mb-4">Contact us at one of our emails or social media, our members will be glad to
+                            answer all of your questions.</p>
+
+                        <a class="mb-0 font-weight-bold text-primary text-uppercase mb-3 open-popup"
+                            style="cursor:pointer;" onclick="openPopUp()">Read Code Of
+                            Conduct</a>
+                        
+
+                        <p class="mb-0 font-weight-bold text-secondary text-uppercase mb-3"><br>Socials</p>
+                        <p>
+                            <a href="facebook.com/openmindsclub" target="_blank" class="p-2 pl-0"><span
+                                    class="icon-facebook"></span></a>
+                            <a href="https://www.instagram.com/openmindsclub/" target="_blank" class="p-2"><span
+                                    class="icon-instagram"></span></a>
+                            <a href="https://twitter.com/clubopenminds" target="_blank" class="p-2"><span
+                                    class="icon-twitter"></span></a>
+                            <a href="https://www.linkedin.com/company/open-minds-club/" target="_blank"
+                                class="p-2"><span class="icon-linkedin"></span></a>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" style="font-family: 'Inter', sans-serif;" id="PopUp">
+        <div class="popup-container">
+
+            <h1>Code of Conduct</h1>
+
+            <div class="scroll"
+                style="text-justify: auto; color: rgb(102, 102, 102); font-size: medium; font-family: Arial, Helvetica, sans-serif;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quibusdam exercitationem numquam,
+                    quae
+                    deleniti soluta quam quos repellendus voluptas, blanditiis perspiciatis ex dicta accusamus. Deleniti
+                    consequatur asperiores id ducimus commodi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quibusdam exercitationem numquam,
+                    quae
+                    deleniti soluta quam quos repellendus voluptas, blanditiis perspiciatis ex dicta accusamus. Deleniti
+                    consequatur asperiores id ducimus commodi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quibusdam exercitationem numquam,
+                    quae
+                    deleniti soluta quam quos repellendus voluptas, blanditiis perspiciatis ex dicta accusamus. Deleniti
+                    consequatur asperiores id ducimus commodi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quibusdam exercitationem numquam,
+                    quae
+                    deleniti soluta quam quos repellendus voluptas, blanditiis perspiciatis ex dicta accusamus. Deleniti
+                    consequatur asperiores id ducimus commodi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quibusdam exercitationem numquam,
+                    quae
+                    deleniti soluta quam quos repellendus voluptas, blanditiis perspiciatis ex dicta accusamus. Deleniti
+                    consequatur asperiores id ducimus commodi!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quibusdam exercitationem numquam,
+                    quae
+                    deleniti soluta quam quos repellendus voluptas, blanditiis perspiciatis ex dicta accusamus. Deleniti
+                    consequatur asperiores id ducimus commodi!</p>
+            </div>
+
+            <button type="button" class="btn cancel" onclick="closePopUp()">Close</button>
+        </div>
+    </div>
+
+    </div>
+
+
+    <footer class="site-footer" style="font-family: 'Inter', sans-serif;">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h2 class="footer-heading text-uppercase mb-4">About Us</h2>
+                    <p>OpenMindsClub is a USTHB scientific club founded in 2009.</p>
+                    <p>USTHB,‌ ‌1‌er‌‌ ‌étage‌ ‌du‌ ‌CRI<br>
+                        BP‌ ‌32‌ ‌El‌ ‌Alia‌ ‌16111,‌ ‌Bab‌ ‌Ezzouar,‌ Alger </p>
+
+                </div>
+                <div class="col-md-4">
+                    <h2 class="footer-heading text-uppercase mb-4">Contact Us</h2>
+                    <p>openmindsclub@usthb.dz‌ <br>
+                        contact@openmindsclub.net‌ <br>
+                        <a href="https://www.openmindsclub.net">openmindsclub.net‌</a>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="footer-heading text-uppercase mb-4">Connect with Us</h2>
+                    <p>
+                        <a href="facebook.com/openmindsclub" target="_blank" class="p-2 pl-0"><span
+                                class="icon-facebook"></span></a>
+                        <a href="https://www.instagram.com/openmindsclub/" target="_blank" class="p-2"><span
+                                class="icon-instagram"></span></a>
+                        <a href="https://twitter.com/clubopenminds" target="_blank" class="p-2"><span
+                                class="icon-twitter"></span></a>
+                        <a href="https://www.linkedin.com/company/open-minds-club/" target="_blank" class="p-2"><span
+                                class="icon-linkedin"></span></a>
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col-md-12 text-center">
+                    <div class="border-top pt-5">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Made with <i class="icon-heart text-primary" aria-hidden="true"></i> by Humans of OMC</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="{% static 'pages/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'pages/js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'pages/js/jquery-ui.js' %}"></script>
+    <script src="{% static 'pages/js/popper.min.js' %}"></script>
+    <script src="{% static 'pages/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'pages/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'pages/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'pages/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'pages/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'pages/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'pages/js/aos.js' %}"></script>
+    <script src="{% static 'pages/js/button.js' %}"></script>
+    <script src="{% static 'pages/js/popup.js' %}"></script>
+    <script src="{% static 'pages/js/main.js' %}"></script>
+
+</body>
+
+</html>
